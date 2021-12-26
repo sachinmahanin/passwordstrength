@@ -1,0 +1,23 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  labels: 
+    app: strengthservice
+  name: strengthservice-deployment
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: strengthservice
+  template: 
+    metadata: 
+      labels: 
+        app: strengthservice
+    spec: 
+      containers: 
+          - image: sachinmahanin/passwordstrength:latest
+            name: strengthservice
+            ports: 
+              - containerPort: 18605
+                protocol: TCP

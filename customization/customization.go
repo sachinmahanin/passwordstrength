@@ -36,6 +36,7 @@ func (customization *Customization) Log(session webserver.Session, logType webse
 
 // PreAction is to customize the pre-action used before each route action takes place, e.g. authorization, etc.
 func (customization *Customization) PreAction(session webserver.Session) error {
+	customizeLoggingFunc(session, webserver.LogTypeBasicDebugging, webserver.LogLevelDebug, "category", "subcategory", "I am here")
 	return prepareSessionFunc(session)
 }
 
