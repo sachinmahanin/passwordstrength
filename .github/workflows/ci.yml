@@ -39,6 +39,6 @@ jobs:
           push: false
           tags: ${{ github.event.repository.name }}:latest, ${{ github.repository }}:latest
 
-      - name: Run functional tests
-        run:  go test -v ./...
+      - name: Run coverage
+        run: go test -race -coverprofile=coverage.out -covermode=atomic
 
