@@ -52,7 +52,7 @@ func calculateStrength(analysisData model.AnalysisResult) int {
 		strength -= analysisData.Length
 	}
 	//Numbers only
-	if analysisData.LettersOnly == true {
+	if analysisData.NumbersOnly == true {
 		strength -= analysisData.Length
 	}
 	//Consecutive uppercase letters
@@ -177,11 +177,6 @@ func analysePassword(password string) (analysisData model.AnalysisResult) {
 
 func Strength(session webserver.Session) (interface{}, error) {
 
-	session.LogMethodLogic(
-		webserver.LogLevelInfo,
-		"business",
-		"Strength", "WELCOME",
-	)
 	var passwordStrengthRequest model.PasswordRequest
 	var bodyError = session.GetRequestBody(
 		&passwordStrengthRequest,
@@ -190,8 +185,8 @@ func Strength(session webserver.Session) (interface{}, error) {
 		return nil, bodyError
 	}
 
-	result := analysePassword(passwordStrengthRequest.Password)
-	var strength = calculateStrength(result)
+	result := analysePasswordFunc(passwordStrengthRequest.Password)
+	var strength = calculateStrengthFunc(result)
 	var complexityType = "Very Weak"
 	switch {
 	case strength >= 80:
@@ -201,7 +196,7 @@ func Strength(session webserver.Session) (interface{}, error) {
 	case strength >= 60:
 		complexityType = "Week"
 	default:
-		complexityType = "Very Week"
+		complexityType = "Very Weak"
 	}
 	var msg = "Your password strength is " + strconv.Itoa(strength) + ". complexity Type =" + complexityType
 	var resp = &model.PasswordStrengthResponse{

@@ -1,11 +1,9 @@
 package config
 
 import (
-	"math/rand"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	webserver "github.com/zhongjie-cai/web-server"
 )
 
 func TestSetupApplication_NoErrors(t *testing.T) {
@@ -13,8 +11,6 @@ func TestSetupApplication_NoErrors(t *testing.T) {
 	var dummyHostName = "hostname"
 	var dummyAppVersion = "1.0.0"
 	var dummyAppPort = "8080"
-	var dummyDefaultAllowedLogType = webserver.LogType(rand.Int())
-	var dummyDefaultAllowedLogLevel = webserver.LogLevel(rand.Int())
 	var dummyDefaultAllowedLogTypeContent = "dummyDefaultAllowedLogType"
 	var dummyDefaultAllowedLogLevelContent = "dummyDefaultAllowedLogLevel"
 	var osGetEnvParameters = []string{
@@ -36,7 +32,7 @@ func TestSetupApplication_NoErrors(t *testing.T) {
 	createMock(t)
 
 	// expect
-	osGetenvExpected = 5
+	osGetenvExpected = 3
 	osGetenv = func(key string) string {
 		osGetenvCalled++
 		if osGetenvCalled > osGetenvExpected {
@@ -45,18 +41,6 @@ func TestSetupApplication_NoErrors(t *testing.T) {
 
 		assert.Equal(t, osGetEnvParameters[osGetenvCalled-1], key)
 		return osGetEnvReturns[osGetenvCalled-1]
-	}
-	webserverNewLogTypeExpected = 1
-	webserverNewLogType = func(value string) webserver.LogType {
-		webserverNewLogTypeCalled++
-		assert.Equal(t, dummyDefaultAllowedLogTypeContent, value)
-		return dummyDefaultAllowedLogType
-	}
-	webserverNewLogLevelExpected = 1
-	webserverNewLogLevel = func(value string) webserver.LogLevel {
-		webserverNewLogLevelCalled++
-		assert.Equal(t, dummyDefaultAllowedLogLevelContent, value)
-		return dummyDefaultAllowedLogLevel
 	}
 
 	// SUT + act
