@@ -1,22 +1,20 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/sachinmahanin/passwordStrength/config"
 	customization "github.com/sachinmahanin/passwordStrength/customization"
 )
 
 // This is a sample of how to setup application for running the server
 func main() {
-	fmt.Println("this is stupid")
+
 	var configError = configSetupApplication()
 	if configError != nil {
 		panic(
 			configError,
 		)
 	}
-	fmt.Println("config.AppPort")
+
 	var port, convErr = strconvAtoi(config.AppPort)
 	if convErr != nil {
 		panic(
@@ -33,6 +31,5 @@ func main() {
 		&customization.Customization{},
 	)
 	defer application.Stop()
-	fmt.Println("Application Started")
 	application.Start()
 }
