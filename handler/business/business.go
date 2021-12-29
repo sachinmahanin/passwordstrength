@@ -3,7 +3,7 @@ package business
 import (
 	"strconv"
 
-	"github.com/sachinmahanin/passwordStrength/handler/business/model"
+	"github.com/sachinmahanin/passwordstrength/handler/business/model"
 
 	"regexp"
 

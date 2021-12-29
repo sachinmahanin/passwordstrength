@@ -1,6 +1,6 @@
 package web
 
-import "github.com/sachinmahanin/passwordStrength/handler/miscellaneous"
+import "github.com/sachinmahanin/passwordstrength/handler/miscellaneous"
 
 // func pointers for injection / testing: web.go
 var (

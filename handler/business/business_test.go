@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/sachinmahanin/passwordStrength/handler/business/model"
+	"github.com/sachinmahanin/passwordstrength/handler/business/model"
 	"github.com/stretchr/testify/assert"
 )
 

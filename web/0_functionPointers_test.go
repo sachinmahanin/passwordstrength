@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/sachinmahanin/passwordStrength/handler/miscellaneous"
+	"github.com/sachinmahanin/passwordstrength/handler/miscellaneous"
 	"github.com/stretchr/testify/assert"
 	webserver "github.com/zhongjie-cai/web-server"
 )

@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
-	"github.com/sachinmahanin/passwordStrength/handler/business/model"
+	"github.com/sachinmahanin/passwordstrength/handler/business/model"
 	webserver "github.com/zhongjie-cai/web-server"
 
 	"github.com/stretchr/testify/assert"

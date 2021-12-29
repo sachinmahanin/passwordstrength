@@ -1,7 +1,7 @@
 package utility
 
 import (
-	"github.com/sachinmahanin/passwordStrength/config"
+	"github.com/sachinmahanin/passwordstrength/config"
 	webserver "github.com/zhongjie-cai/web-server"
 )
 

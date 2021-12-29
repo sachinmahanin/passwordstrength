@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sachinmahanin/passwordStrength/handler/business"
-	"github.com/sachinmahanin/passwordStrength/handler/utility"
+	"github.com/sachinmahanin/passwordstrength/handler/business"
+	"github.com/sachinmahanin/passwordstrength/handler/utility"
 	"github.com/stretchr/testify/assert"
 	webserver "github.com/zhongjie-cai/web-server"
 )
@@ -72,7 +72,7 @@ func TestRegisteredBusinessRoutes(t *testing.T) {
 
 	// assert
 	assert.Equal(t, 1, len(result))
-	assert.Equal(t, "business.passwordStrength", result[0].Endpoint)
+	assert.Equal(t, "business.passwordstrength", result[0].Endpoint)
 	assert.Equal(t, http.MethodPost, result[0].Method)
 	assert.Equal(t, "/PassportStrength", result[0].Path)
 	funcEquals(t, business.Strength, result[0].ActionFunc)

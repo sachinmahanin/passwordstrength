@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/sachinmahanin/passwordStrength/config"
-	customization "github.com/sachinmahanin/passwordStrength/customization"
+	"github.com/sachinmahanin/passwordstrength/config"
+	customization "github.com/sachinmahanin/passwordstrength/customization"
 )
 
 // This is a sample of how to setup application for running the server

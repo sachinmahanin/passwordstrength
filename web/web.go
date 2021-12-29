@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/sachinmahanin/passwordStrength/handler/business"
-	"github.com/sachinmahanin/passwordStrength/handler/utility"
+	"github.com/sachinmahanin/passwordstrength/handler/business"
+	"github.com/sachinmahanin/passwordstrength/handler/utility"
 	webserver "github.com/zhongjie-cai/web-server"
 )
 
@@ -21,7 +21,7 @@ func registeredBusinessRoutes() []webserver.Route {
 	fmt.Println("registeredBusinessRoutes")
 	return []webserver.Route{
 		webserver.Route{
-			Endpoint:   "business.passwordStrength",
+			Endpoint:   "business.passwordstrength",
 			Method:     http.MethodPost,
 			Path:       "/PassportStrength",
 			ActionFunc: business.Strength,
