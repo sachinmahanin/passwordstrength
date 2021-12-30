@@ -25,6 +25,20 @@ returns the strength of the password.
     ]
   }
 ```
+## API Request
+How to send API Request to the code running locally through tool like Postman etc.?
+
+Method : POST
+
+URL : http://localhost:18605/PassportStrength
+
+Body :
+
+```
+{
+    "password": "JamesBond#007forYou"
+}
+```
 ## Code structure
 
 ### passwordstrength
