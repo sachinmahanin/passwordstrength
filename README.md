@@ -64,7 +64,7 @@ Body :
   web            - RegisteredStatics Static,Business & Utility routes
 
 ## CI
-As soon as commit is pushed to the master branch, CI workflow is triggered is triggered. Which include
+As soon as commit is pushed to the master branch, CI workflow is triggered. Which include
 1. Build
 2. Running Test cases with code coverage
 3. Building docker image
